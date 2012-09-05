@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="stylesheet.css" rel="stylesheet">
+    <script src="jquery-1.8.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+
+        var scrollAppear = {
+            checkAppear:function () {
+                $(".section").children().each(function (index, element) {
+                    if (!$(element).hasClass("appeared") && scrollAppear.shouldAppear(element)) {
+                        scrollAppear.appear(element);
+                        return false;
+                    }
+                })
+            },
+            shouldAppear:function (element) {
+                return $(element).offset().top < $(window).scrollTop() + $(window).height()
+            },
+            appear:function (element) {
+                $(element).animate({opacity:1, left:0}, 500);
+                $(element).addClass("appeared");
+            }
+        };
+
+        $(function () {
+            window.setInterval(scrollAppear.checkAppear, 200);
+        });
+    </script>
+</head>
+<body data-spy="scroll" data-target=".navbar">
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="./index.html">Анкета Айвазян Ольги</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li>
+                        <a href="#general">Общие вопросы</a>
+                    </li>
+                    <li>
+                        <a href="#dev">Опыт разработки</a>
+                    </li>
+                    <li class="divider-vertical"></li>
+
+                    <li class="pull-right">
+                        <a href="javascript: window.print()">Распечатать</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="padding-bottom: 100px">
+
+    <div class="row">
+        <div class="span8 offset2">
+
+            <div class="section" id="general">
+
+                <div class="header">Общие вопросы</div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Фамилия, имя, отчество
+                    </div>
+                    <div class="ank__answer">
+                        Айвазян Ольга Сергеевна
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Е-mail
+                    </div>
+                    <div class="ank__answer">
+                        <a href="mailto:olga.ayva@gmail.com">olga.ayva@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Телефон
+                    </div>
+                    <div class="ank__answer">
+                        0 (000) 000-00-00
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Год рождения
+                    </div>
+                    <div class="ank__answer">
+                        00.00.0000
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Город, в котором живёте
+                    </div>
+                    <div class="ank__answer">
+                        Wonderland
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Вуз, факультет, специальность, кафедра
+                    </div>
+                    <div class="ank__answer">
+                        Wonderland High School
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Год окончания вуза
+                    </div>
+                    <div class="ank__answer">
+                        2010
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        На каком уровне владеете английским языком?
+                    </div>
+                    <div class="ank__answer">
+                        Разговорный, технический
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Чего вы ожидаете от участия в Школе?
+                    </div>
+                    <div class="ank__answer">
+                        Курс по Javascript, CSS, HTML
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Откуда вы о нас узнали?
+                    </div>
+                    <div class="ank__answer">
+                        Друзья
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Сколько времени вы были бы готовы уделять стажировке или работе в Яндексе?
+                    </div>
+                    <div class="ank__answer">
+                        Сколько требуется
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="section" id="dev">
+
+                <div class="header">Опыт разработки</div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Расскажите нам о вашем опыте разработки. Ничего не упускайте: это может быть как серьезный
+                        интерфейс, так и просто домашняя страничка.
+                    </div>
+                    <div class="ank__answer">
+                        Веб разработкой ранее не занималась, научилась основам тут http://www.codecademy.com/
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Какие языки программирования, фреймворки и технологии вы использовали? Сложились ли у вас
+                        личные предпочтения?
+                    </div>
+                    <div class="ank__answer">
+                        Javascript, Jquery. Предпочтения не сложились.
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Какие редакторы и среды разработки вы использовали? Чем обычно пользуетесь?
+                    </div>
+                    <div class="ank__answer">
+                        Cloud9 IDE, WebStorm
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        С какими ОС приходилось сталкиваться? Для каких целей вы их использовали?
+                    </div>
+                    <div class="ank__answer">
+                        MacOS, Windows
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Приходилось ли вам пользоваться системами контроля версий? Если да, то какими? Какая из них
+                        вам нравится больше всего?
+                    </div>
+                    <div class="ank__answer">
+                        В проектах использовала git и svn. Последнее время выбираю git: распределенная система,
+                        подключены клауд сервисы, интегрирован в тот же Cloud9.
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Использовали ли вы системы постановки и ведения задач?
+                    </div>
+                    <div class="ank__answer">
+                        JIRA, Bitbucket, Asana, Megaplan
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Какие полезные для фронтенд-разработчика ресурсы вы используете и можете посоветовать?
+                    </div>
+                    <div class="ank__answer">
+                        http://www.codeacademy.com/
+                    </div>
+                </div>
+
+                <div class="ank">
+                    <div class="ank__question">
+                        Работали ли вы где-нибудь? Какие у вас были должностные обязанности? Есть ли опыт работы в
+                        команде?
+                    </div>
+                    <div class="ank__answer">
+                        Да. Работаю как product manager. Общаюсь с клиентами, формирую продукт, пишу технические
+                        задания, делаю оценку, набираю проектную команду, ставлю задачи и сроки, веду проект с нуля
+                        до сдачи. Управляю командами от 2х до 5ти человек.
+                    </div>
+                </div>
+
+
+                <p style="padding-top: 30px"><a href="javascript: window.print()">Распечатать</a></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
